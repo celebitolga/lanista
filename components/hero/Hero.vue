@@ -1,5 +1,5 @@
 <template>
-  <section class="Hero">
+  <section class="Hero container">
     <HeroSlogan />
 
     <div class="Hero-content">
@@ -15,6 +15,7 @@
 
 <style lang="scss" scoped>
 .Hero {
+  padding: 3em 0 5em;
 
   .Hero-content {
     display: flex;

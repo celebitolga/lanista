@@ -1,10 +1,20 @@
 <template>
-  <div class="container">
-    <Header />
+  <div>
+    <Header class="container"/>
 
     <Nuxt />
   </div>
 </template>
+
+<script>
+import Header from '@/components/common/Header';
+
+export default {
+  components: {
+    Header,
+  },  
+}
+</script>
 
 <style lang="scss">
 html {
@@ -23,17 +33,29 @@ html {
   max-width: 1148px;
   margin-left: auto;
   margin-right: auto;
-  width: calc(100% - 20px);
+  //width: calc(100% - 20px);
+}
+
+.backgroundWhite {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .colorWhite {
   color: #fff;
 }
 
+.colorGray {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.colorGreen {
+  color: #50D38D;
+}
+
 .specialButton {
   cursor: pointer;
   background-color: #5F24D9;
-  border-radius: 8px;
+  border-radius: 7px;
   padding: 8px 24px;
   font-size: 1em;
   outline: none;
@@ -79,11 +101,17 @@ html {
   html {
     font-size: 13px;
   }
+  .container {
+    margin: 0 .8em;
+  }
 }
 
 @media (max-width: 320px){
   html {
     font-size: 12px;
+  }
+  .container {
+    margin: 0 .5em;
   }
 }
 

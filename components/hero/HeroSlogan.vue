@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 32px 0 78px;
+  padding: 0 0 78px;
 
   &-title {
     color: #50D38D;
@@ -24,6 +24,7 @@
     font-size: 1em;
     line-height: 24px;
     margin-bottom: 1.5em;
+    text-align: center;
   }
 
   &-text {
@@ -31,6 +32,7 @@
     font-weight: 800;
     font-size: 1.8em;
     line-height: 32px;
+    text-align: center;
   }
 }
 </style>
