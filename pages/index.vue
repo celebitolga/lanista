@@ -1,6 +1,6 @@
 <template>
   <div>
-    First Commit
+    
   </div>
 </template>
 
