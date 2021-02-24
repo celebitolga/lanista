@@ -52,6 +52,10 @@ html {
   color: #50D38D;
 }
 
+.colorYellow {
+  color: #ffd736;
+}
+
 .specialButton {
   cursor: pointer;
   background-color: #5F24D9;
@@ -82,7 +86,7 @@ html {
 
 @media (max-width: 992px){
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
   .container {
     max-width: 720px;
@@ -90,7 +94,7 @@ html {
 }
 @media (max-width: 768px){
   html {
-    font-size: 14px;
+    font-size: 13px;
   }
   .container {
     max-width: 540px;
@@ -99,7 +103,7 @@ html {
 
 @media (max-width: 576px){
   html {
-    font-size: 13px;
+    font-size: 12px;
   }
   .container {
     margin: 0 .8em;
