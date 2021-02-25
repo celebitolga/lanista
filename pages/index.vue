@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <Hero />
 
     <FirstSection />
@@ -13,6 +14,7 @@
     <OurOffersSection :cards="cards"/>
     
     <Footer />
+
   </div>
 </template>
 

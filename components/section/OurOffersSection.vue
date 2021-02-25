@@ -44,6 +44,7 @@ export default {
 <style lang="scss" scoped>
 .Section {
   padding: 5em 0;
+  overflow: hidden;
 
   &-content {
     display: flex;
@@ -88,8 +89,6 @@ export default {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      //align-items: center;
-      
     }
   }
 }
@@ -100,7 +99,10 @@ export default {
 }
 
 @media (max-width: 992px){
-
+.Section-content-cards {
+    width: 100%;
+    display: block;
+  }
 }
 @media (max-width: 768px){
 }

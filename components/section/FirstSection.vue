@@ -42,7 +42,7 @@ export default {
     window.addEventListener('scroll', checkSlide);
   },
   destroyed () {
-    window.removeEventListener('scroll');
+    window.document.removeEventListener("scroll", () => {});
   },
 }
 </script>

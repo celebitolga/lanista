@@ -52,7 +52,7 @@ export default {
     window.addEventListener('scroll', checkSlide);
   },
   destroyed () {
-    window.removeEventListener('scroll');
+    window.document.removeEventListener("scroll",  () => {});
   },
   props: {
     card: {
@@ -165,7 +165,9 @@ export default {
 }
 
 @media (max-width: 992px){
-
+  .card-item {
+    width: 95%;
+  }
 }
 
 @media (max-width: 768px){
