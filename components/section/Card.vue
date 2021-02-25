@@ -2,7 +2,7 @@
   <div class="card-item colorWhite">
     <h5 class="card-item-title"> {{card.title}} </h5>
     <div class="card-item-price">
-       <span class="card-item-price-dolar">$</span><span class="card-item-price-price">{{ choice ? card.price.monthly : card.price.yearly }}</span> <span class="card-item-price-choice"> / {{choice ? 'Monthly' : 'Yearly'}} </span>
+       <span class="card-item-price-dolar">$</span><span class="card-item-price-price">{{ choice ? card.price.monthly : card.price.yearly }}</span><span class="card-item-price-choice">/ {{choice ? 'Monthly' : 'Yearly'}} </span>
     </div>
     <div class="card-item-video cardContent">
       <img class="card-item-video-arrow" src="@/static/Ok.svg" alt="okey">
@@ -61,7 +61,7 @@ export default {
       font-style: normal;
       font-weight: 800;
       font-size: 2em;
-      line-height: 2em;
+      line-height: 1em;
       background: -webkit-linear-gradient(#3DD1CA, #4C6BFF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -84,7 +84,7 @@ export default {
       &-price {
         font-style: normal;
         font-weight: bold;
-        font-size: 3em;
+        font-size: 2.6em;
         line-height: 2em;
         margin: 0px .25em;
       }
@@ -138,7 +138,7 @@ export default {
 }
 
 @media (max-width: 768px){
-
+  
 }
 
 @media (max-width: 576px){

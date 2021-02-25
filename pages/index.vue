@@ -12,6 +12,7 @@
 
     <OurOffersSection :cards="cards"/>
     
+    <Footer />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import SecondSection from '@/components/section/SecondSection';
 import ThirdSection from '@/components/section/ThirdSection';
 import SubbeddSection from '@/components/section/SubbeddSection';
 import OurOffersSection from '@/components/section/OurOffersSection';
+import Footer from '@/components/footer/Footer';
 
 export default {
   data() {
@@ -41,6 +43,7 @@ export default {
     ThirdSection,
     SubbeddSection,
     OurOffersSection,
+    Footer,
   },
 }
 </script>
