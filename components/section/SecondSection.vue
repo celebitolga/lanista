@@ -2,10 +2,10 @@
   <div>
     <section class="Section container">
       <div class="Section-content">
-        <div class="Section-content-right">
+        <div class="Section-content-right watchs">
           <img src="@/static/Section_2.svg">
         </div>
-        <div class="Section-content-left">
+        <div class="Section-content-left watchs">
           <div class="content-inside">
             <h4 class="content-inside-subtitle colorGreen">
               Cheaper translation service
@@ -26,9 +26,12 @@
   </div>
 </template>
 
+
+
 <style lang="scss" scoped>
 .Section {
   padding: 5.5em 0;
+  overflow: hidden;
 
   &-content {
     display: flex;
@@ -40,6 +43,10 @@
       flex-basis: 45%;
       height: 300px;
       margin-right: 5%;
+
+      opacity: 0;
+      transform: translateX(-30%);
+      transition: all .7s;
       
       .content-inside {
         display: flex;
@@ -87,8 +94,19 @@
     &-right {
       order: 2;
       flex-basis: 55%;
+
+
+      opacity: 0;
+      transform: translateX(30%);
+      transition: all .7s;
     }
   }
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0%) ;
+  transition: all .7s;
 }
 
 @media (max-width: 992px){

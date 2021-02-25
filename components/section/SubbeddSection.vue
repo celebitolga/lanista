@@ -2,7 +2,7 @@
   <div>
     <section class="Section container">
       <div class="Section-content">
-        <div class="Section-content-right">
+        <div class="Section-content-right watchs">
           <div class="Section-content-right-up">
             <div class="up-item marginRight marginBottom">
               <img src="@/static/Upitem1.svg" alt="" class="up-item-image">
@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <div class="Section-content-left">
+        <div class="Section-content-left watchs">
           <div class="content-inside">
             <h3 class="content-inside-title colorWhite">
               What is Subbedd ?
@@ -53,9 +53,12 @@
   </div>
 </template>
 
+
+
 <style lang="scss" scoped>
 .Section {
   padding: 5.5em 0;
+  overflow: hidden;
 
   &-content {
     display: flex;
@@ -66,6 +69,10 @@
       order: 1;
       flex-basis: 32%;
       align-self: flex-start;
+
+      opacity: 0;
+      transform: translateX(-30%);
+      transition: all .7s;
       
       .content-inside {
         display: flex;
@@ -128,6 +135,10 @@
       font-size: 1em;
       line-height: 1.5em;
 
+      opacity: 0;
+      transform: translateX(30%);
+      transition: all .7s;
+
       &-up {
         display: flex;
         justify-content: center;
@@ -169,6 +180,12 @@
       }
     }
   }
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0%) ;
+  transition: all .7s;
 }
 
 

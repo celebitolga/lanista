@@ -1,5 +1,5 @@
 <template>
-  <div class="card-item colorWhite">
+  <div class="card-item colorWhite watchCards">
     <h5 class="card-item-title"> {{card.title}} </h5>
     <div class="card-item-price">
        <span class="card-item-price-dolar">$</span><span class="card-item-price-price">{{ choice ? card.price.monthly : card.price.yearly }}</span><span class="card-item-price-choice">/ {{choice ? 'Monthly' : 'Yearly'}} </span>
@@ -35,6 +35,25 @@
 
 <script>
 export default {
+  mounted () {
+    const watchs = document.querySelectorAll(".watchCards");
+
+    function checkSlide() {
+      watchs.forEach(watch => {
+        const slideInAt = (window.scrollY + window.innerHeight) - watch.offsetHeight / 2;
+        const isHalfShown = slideInAt > watch.offsetTop;
+        if (isHalfShown) {
+          watch.classList.add('activeCard');
+        } else {
+          watch.classList.remove('activeCard');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkSlide);
+  },
+  destroyed () {
+    window.removeEventListener('scroll');
+  },
   props: {
     card: {
       type: Object,
@@ -50,11 +69,17 @@ export default {
 
 <style lang="scss" scoped>
   .card-item {
+    position: relative;
     border: 2px solid #89DBFF;
     box-sizing: border-box;
     border-radius: 1em;
     padding: 2em;
     width: 23.5%;
+
+    opacity: 0;
+    transform: translateY(50%) scale(1.5);;
+    transition: all .7s;
+
 
     &-title {
       text-transform: uppercase;
@@ -125,6 +150,12 @@ export default {
       line-height: 1.5em;
       margin-top: 1.5em;
     }
+  }
+
+  .activeCard {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+    transition: all .7s;
   }
 
 @media (min-width: 993px) and (max-width: 1200px) {

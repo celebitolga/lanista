@@ -2,10 +2,10 @@
   <div class="backgroundWhite">
     <section class="Section container">
       <div class="Section-content">
-        <div class="Section-content-right">
+        <div class="Section-content-right watchs">
           <img src="@/static/Section_1.svg">
         </div>
-        <div class="Section-content-left">
+        <div class="Section-content-left watchs">
           <div class="content-inside">
             <h4 class="content-inside-subtitle colorGreen">Low-cost subtitling service</h4>
             <h3 class="content-inside-title colorWhite">What is Subbedd ?</h3>
@@ -23,9 +23,34 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    const watchs = document.querySelectorAll(".watchs");
+
+    function checkSlide() {
+      watchs.forEach(watch => {
+        const slideInAt = (window.scrollY + window.innerHeight) - watch.offsetHeight / 2;
+        const isHalfShown = slideInAt > watch.offsetTop;
+        if (isHalfShown) {
+          watch.classList.add('active');
+        } else {
+          watch.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', checkSlide);
+  },
+  destroyed () {
+    window.removeEventListener('scroll');
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 .Section {
   padding: 5.5em 0;
+  overflow: hidden;
 
   &-content {
     display: flex;
@@ -36,6 +61,10 @@
       flex-basis: 45%;
       height: 400px;
       margin-left: 5%;
+
+      opacity: 0;
+      transform: translateX(30%);
+      transition: all .7s;
       
       .content-inside {
         display: flex;
@@ -81,8 +110,19 @@
 
     &-right {
       flex-basis: 55%;
+
+
+      opacity: 0;
+      transform: translateX(-30%);
+      transition: all .7s;
     }
   }
+}
+
+.active {
+  opacity: 1;
+  transform: translateX(0%) ;
+  transition: all .7s;
 }
 
 @media (max-width: 992px){

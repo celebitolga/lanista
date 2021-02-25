@@ -2,10 +2,10 @@
   <div class="backgroundWhite">
     <section class="Section container">
       <div class="Section-content">
-        <div class="Section-content-right">
+        <div class="Section-content-right watchs">
           <img src="@/static/Section_3.svg">
         </div>
-        <div class="Section-content-left">
+        <div class="Section-content-left watchs">
           <div class="content-inside">
             <h3 class="content-inside-title colorWhite">How will Subbedd access my video and provide subtitling ?</h3>
             <h4 class="content-inside-subtitle colorGreen">
@@ -40,9 +40,11 @@
   </div>
 </template>
 
+
 <style lang="scss" scoped>
 .Section {
   padding: 5.5em 0;
+  overflow: hidden;
 
   &-content {
     display: flex;
@@ -53,6 +55,10 @@
       flex-basis: 45%;
       height: 400px;
       margin-left: 5%;
+
+      opacity: 0;
+      transform: translateX(30%);
+      transition: all .7s;
       
       .content-inside {
         display: flex;
@@ -133,9 +139,20 @@
 
     &-right {
       flex-basis: 55%;
+
+      opacity: 0;
+      transform: translateX(-30%);
+      transition: all .7s;
     }
   }
 }
+
+.active {
+  opacity: 1;
+  transform: translateX(0%) ;
+  transition: all .7s;
+}
+
 
 @media (max-width: 992px){
   .Section {
